@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="es" class="scroll-smooth antialiased">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <!-- Eliminamos Navbar y Footer; solo renderizamos el bloque de conversión puro -->
+  <body class="min-h-screen flex flex-col bg-slate-50/50 text-[#0f172a] font-sans selection:bg-teal-100">
+    <main class="flex-grow">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @import "tailwindcss";
+
+  :root {
+    --color-brand-dark: #091e3a;
+    --color-brand-accent: #0f9f90;
+    --color-brand-accent-hover: #0d877a;
+    --color-brand-bg-light: #f4faf9;
+  }
+</style>

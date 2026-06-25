@@ -1,0 +1,16 @@
+---
+const { kicker, title, subtitle, primaryHref = "/agencias", primaryText = "Explorar agencias", secondaryHref = "#", secondaryText = "Cómo funciona" } = Astro.props;
+---
+<section class="section">
+  <div class="container">
+    <div class="hero">
+      {kicker && <div class="kicker">{kicker}</div>}
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+      <div class="btns">
+        <a class="btn btn-primary" href={primaryHref}>{primaryText}</a>
+        <a class="btn btn-secondary" href={secondaryHref}>{secondaryText}</a>
+      </div>
+    </div>
+  </div>
+</section>

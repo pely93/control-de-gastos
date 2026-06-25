@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Quiz from "../components/Quiz.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Disclosure from "../components/Disclosure.astro";
+---
+
+<BaseLayout
+  title="Control de Gasto para Agencias"
+  description="Landing para agencias de paid media con quiz y recomendaciones de control de gasto."
+>
+  <Hero
+    kicker="Para agencias de paid media"
+    title="Tarjetas virtuales y control de gasto para agencias que compran anuncios."
+    subtitle="Descubre en 2 minutos cómo mejorar el control del gasto publicitario de tu agencia y reducir el caos de tarjetas, límites y conciliación."
+    primaryHref="#quiz"
+    primaryText="Solicitar auditoría gratuita"
+    secondaryHref="#resultado"
+    secondaryText="Ver recomendaciones"
+  />
+
+  <section class="section">
+    <div class="container grid-cards">
+      <div class="card">
+        <h3>Sin compartir tarjetas</h3>
+        <p>Separa pagos por cliente, cuenta o campaña.</p>
+      </div>
+      <div class="card">
+        <h3>Más control</h3>
+        <p>Limita gasto y reduce errores operativos.</p>
+      </div>
+      <div class="card">
+        <h3>Menos conciliación</h3>
+        <p>Ordena la operativa para ahorrar tiempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="container">
+      <SectionTitle
+        kicker="Diagnóstico rápido"
+        title="Responde el quiz y recibe una recomendación"
+        subtitle="La lógica está pensada para mostrar una solución más o menos prioritaria según tu operativa."
+      />
+      <Quiz />
+    </div>
+  </section>
+
+  <section class="section" id="resultado">
+    <div class="container">
+      <Disclosure text="Algunas recomendaciones pueden generarnos una comisión, sin coste adicional para ti." />
+    </div>
+  </section>
+</BaseLayout>

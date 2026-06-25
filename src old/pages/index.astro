@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Disclosure from "../components/Disclosure.astro";
+---
+
+<BaseLayout
+  title="Control de Gasto"
+  description="Explora soluciones, guías y directorios para control de gasto y afiliación."
+>
+  <Hero
+    kicker="Proyecto de afiliación y control de gasto"
+    title="Soluciones de afiliación y control de gasto para negocios que quieren decidir mejor."
+    subtitle="Explora directorios y guías específicas para encontrar recomendaciones adaptadas a cada necesidad."
+    primaryHref="/agencias"
+    primaryText="Explorar agencias"
+    secondaryHref="#como-funciona"
+    secondaryText="Cómo funciona"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionTitle
+        kicker="Directorios"
+        title="Empieza por la vertical adecuada"
+        subtitle="Cada directorio está pensado para un tipo de necesidad concreta."
+      />
+      <div class="grid-cards">
+        <a class="card" href="/agencias">
+          <h3>Agencias</h3>
+          <p>Control de gasto, tarjetas virtuales y recomendaciones para media buying.</p>
+        </a>
+        <div class="card">
+          <h3>Finanzas</h3>
+          <p>Próximamente nuevas ofertas y guías específicas.</p>
+        </div>
+        <div class="card">
+          <h3>Más verticales</h3>
+          <p>La arquitectura está lista para ampliar a nuevas categorías.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>Cómo funciona</h2>
+        <p>1. Entras en el directorio adecuado.</p>
+        <p>2. Respondes un quiz breve.</p>
+        <p>3. Ves una recomendación adaptada al caso.</p>
+      </div>
+      <div class="card">
+        <h2>Qué aporta</h2>
+        <p>Un sitio ligero, modular y preparado para crecer con más directorios y contenidos SEO más adelante.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <Disclosure text="Algunas recomendaciones pueden generarnos una comisión, sin coste adicional para ti." />
+    </div>
+  </section>
+</BaseLayout>

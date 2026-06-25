@@ -1,0 +1,8 @@
+---
+const { kicker, title, subtitle } = Astro.props;
+---
+<div style="margin-bottom: 16px;">
+  {kicker && <div class="kicker">{kicker}</div>}
+  <h2>{title}</h2>
+  {subtitle && <p>{subtitle}</p>}
+</div>

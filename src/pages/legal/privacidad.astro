@@ -1,0 +1,59 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<LandingLayout title="Política de Privacidad - GastoInteligente" description="Información detallada sobre el tratamiento de sus datos personales.">
+  <div class="bg-white min-h-screen flex flex-col justify-between">
+    
+    <nav class="border-b border-slate-100 py-5 bg-slate-50/50">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-[#0f9f90] transition-colors">
+          &larr; Volver al inicio
+        </a>
+        <span class="text-xs text-slate-400 font-medium">Información Corporativa</span>
+      </div>
+    </nav>
+
+    <article class="mx-auto max-w-3xl px-4 sm:px-6 py-16 flex-grow prose prose-slate">
+      <h1 class="text-3xl font-extrabold text-[#091e3a] tracking-tight mb-2">Política de Privacidad</h1>
+      <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+        En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018, de Protección de Datos Personales (LOPDGDD), le informamos sobre el tratamiento de sus datos personales.
+      </p>
+
+      <div class="space-y-8 text-sm text-slate-600 leading-relaxed">
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Responsable del tratamiento</h2>
+          <p>El responsable del tratamiento de los datos personales recabados a través de este sitio web es el titular del dominio. Para ejercer sus derechos puede contactar a través de: <a href="mailto:info@gastointeligente.es" class="text-[#0f9f90] hover:underline">info@gastointeligente.es</a></p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Finalidad del tratamiento</h2>
+          <p>Los datos personales que nos facilita se utilizan para: (a) gestionar y responder a las solicitudes de información, (b) enviar el diagnóstico o informe solicitado, (c) mejorar los servicios ofrecidos.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Base jurídica</h2>
+          <p>El tratamiento de los datos se realiza con base en el consentimiento explícito del usuario al completar los formularios del sitio.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Conservación de los datos</h2>
+          <p>Los datos se conservarán mientras sea necesario para la finalidad que motivó su recogida y, en todo caso, durante los plazos legalmente establecidos.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Cesión de datos</h2>
+          <p>No se cederán datos a terceros salvo obligación legal. Cuando recomendamos una solución de un tercero y el usuario accede voluntariamente a ella, ese tercero actúa bajo su propia política de privacidad.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Derechos del usuario</h2>
+          <p>Puede ejercer sus derechos de acceso, rectificación, supresión, portabilidad, limitación y oposición contactando con nosotros en <a href="mailto:info@gastointeligente.es" class="text-[#0f9f90] hover:underline">info@gastointeligente.es</a></p>
+        </section>
+      </div>
+    </article>
+
+    <Footer />
+  </div>
+</LandingLayout>

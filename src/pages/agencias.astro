@@ -1,0 +1,130 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import QuizEngine from '../components/QuizEngine.astro';
+---
+
+<LandingLayout 
+  title="Tarjetas virtuales y control de gastos para agencias que compran anuncios" 
+  description="Separa pagos por cliente de forma segura, limita el gasto publicitario exacto por campaña y reduce la conciliación contable manual a final de mes."
+>
+  <header class="bg-[#f4faf9] border-b border-teal-100/40 py-5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center gap-2">
+      <div class="h-8 w-8 rounded-lg bg-[#0f9f90] flex items-center justify-center text-white font-black text-sm shadow-xs">
+        GI
+      </div>
+      <div class="flex flex-col">
+        <span class="text-sm font-bold text-[#091e3a] leading-none">Control de Gasto</span>
+        <span class="text-[10px] text-[#0f9f90] font-medium tracking-wide mt-0.5">Soluciones para empresas</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#f4faf9] via-white to-transparent py-14 lg:py-20 border-b border-teal-100/30">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-8 flex flex-col items-start">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-[#e6f4f1] px-3 py-1 text-xs font-medium text-[#0f9f90] border border-[#ccede6]">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Diagnóstico gratuito &middot; Recomendaciones independientes
+          </span>
+          
+          <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-[#091e3a] sm:text-5xl lg:text-6xl leading-[1.15]">
+            Tarjetas virtuales y control de gastos <span class="text-[#0f9f90]">para agencias de ads</span>
+          </h1>
+          
+          <p class="mt-6 text-lg text-slate-500 max-w-2xl font-normal leading-relaxed">
+            Descubre en 2 minutos cómo mejorar el control de gastos de tu agencia y eliminar el caos de tarjetas compartidas, límites poco claros y conciliación manual.
+          </p>
+          
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <a href="#quiz" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f9f90] px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#0d877a] transition-all transform hover:-translate-y-0.5">
+              Solicitar auditoría gratuita
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500">
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Solo 2 minutos</span>
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Sin compromiso</span>
+            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Datos protegidos (RGPD)</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4">
+          <div class="bg-white p-6 rounded-2xl border border-teal-100 shadow-xl shadow-teal-900/5 space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span class="text-xs font-bold text-[#091e3a] uppercase tracking-wider">Límites por Cliente</span>
+              <span class="text-[10px] bg-[#e6f4f1] text-[#0f9f90] font-semibold px-2 py-0.5 rounded">Activo</span>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                  <span>Cliente A &mdash; Meta Ads</span>
+                  <span class="text-slate-900 font-semibold">82%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-[#0f9f90] h-full w-[82%] rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                  <span>Cliente B &mdash; Google Ads</span>
+                  <span class="text-slate-900 font-semibold">45%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-[#0f9f90] h-full w-[45%] rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
+                  <span>Cliente C &mdash; TikTok Ads</span>
+                  <span class="text-slate-900 font-semibold">91%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-amber-500 h-full w-[91%] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-2 text-center">
+              <span class="text-[11px] text-slate-400">Trazabilidad operativa total sin tarjetas compartidas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="py-16 bg-slate-50">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold tracking-tight text-[#091e3a]">Evaluación de Medios de Pago</h2>
+        <p class="mt-2 text-sm text-slate-500">Configura tu estructura y descubre qué integraciones mitigan tus cuellos de botella.</p>
+      </div>
+      <QuizEngine />
+    </div>
+  </section>
+
+<!-- Pie de página -->
+  <footer class="bg-white border-t border-slate-200 py-10 text-center text-xs text-slate-400">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-3">
+      
+      <!-- Compliant Inline Legal Links -->
+      <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 font-medium text-slate-400/80">
+        <a href="/legal/privacidad" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Privacidad</a>
+        <span class="text-slate-300">&middot;</span>
+        <a href="/legal/cookies" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Cookies</a>
+        <span class="text-slate-300">&middot;</span>
+        <a href="/legal/aviso-legal" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Aviso legal</a>
+        <span class="text-slate-300">&middot;</span>
+        <a href="/legal/afiliacion" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Política de afiliación</a>
+      </div>
+      
+      <!-- Copyright & System Context Description -->
+      <p class="text-[11px] text-slate-400/70">
+        &copy; 2026 Control de Gastos. Todos los derechos reservados. Análisis técnico independiente de infraestructura de pagos.
+      </p>
+    </div>
+  </footer>
+</LandingLayout>

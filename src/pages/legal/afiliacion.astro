@@ -1,0 +1,55 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<LandingLayout title="Política de Afiliación - GastoInteligente" description="Transparencia explícita sobre nuestro modelo de monetización y acuerdos comerciales.">
+  <div class="bg-white min-h-screen flex flex-col justify-between">
+    
+    <nav class="border-b border-slate-100 py-5 bg-slate-50/50">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-[#0f9f90] transition-colors">
+          &larr; Volver al inicio
+        </a>
+        <span class="text-xs text-slate-400 font-medium">Información Corporativa</span>
+      </div>
+    </nav>
+
+    <article class="mx-auto max-w-3xl px-4 sm:px-6 py-16 flex-grow prose prose-slate">
+      <h1 class="text-3xl font-extrabold text-[#091e3a] tracking-tight mb-2">Política de Afiliación</h1>
+      
+      <div class="bg-[#f4faf9] border border-teal-100 rounded-xl p-5 mb-8 text-sm text-slate-700">
+        <strong>Aviso importante:</strong> Este sitio puede recibir una compensación económica cuando un usuario contrata un producto o servicio recomendado aquí. Esta compensación no influye en la objetividad de nuestras recomendaciones.
+      </div>
+
+      <div class="space-y-8 text-sm text-slate-600 leading-relaxed">
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">¿Qué es la afiliación?</h2>
+          <p>La afiliación es un modelo de colaboración comercial en el que este sitio actúa como intermediario informativo entre el usuario y determinados proveedores de productos o servicios. Cuando un usuario accede a una oferta desde este sitio y la contrata, podemos recibir una comisión del proveedor.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Principios que rigen nuestras recomendaciones</h2>
+          <ul class="list-disc pl-5 space-y-2 mt-2">
+            <li>Solo recomendamos soluciones que consideramos relevantes y de calidad para el perfil del usuario.</li>
+            <li>La existencia de un acuerdo de afiliación no determina la recomendación; esta se basa en el diagnóstico realizado.</li>
+            <li>Indicamos de forma clara y visible cuándo un enlace o recomendación está sujeto a un acuerdo de afiliación.</li>
+            <li>No ocultamos los intereses económicos ni los minimizamos en la comunicación.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Sin coste adicional para el usuario</h2>
+          <p>Las comisiones que podemos recibir son abonadas por el proveedor del servicio y no suponen ningún coste adicional para el usuario final. El precio del producto o servicio es el mismo que si accedieras directamente.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Transparencia en los contenidos</h2>
+          <p>Allí donde exista un acuerdo de afiliación activo, lo indicamos con un aviso visible junto al contenido correspondiente. Si tienes dudas sobre una recomendación concreta, puedes contactarnos en <a href="mailto:info@gastointeligente.es" class="text-[#0f9f90] hover:underline">info@gastointeligente.es</a>.</p>
+        </section>
+      </div>
+    </article>
+
+    <Footer />
+  </div>
+</LandingLayout>

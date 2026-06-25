@@ -1,0 +1,51 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<LandingLayout title="Aviso Legal - GastoInteligente" description="Condiciones generales de acceso y uso del portal informativo.">
+  <div class="bg-white min-h-screen flex flex-col justify-between">
+    
+    <nav class="border-b border-slate-100 py-5 bg-slate-50/50">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-[#0f9f90] transition-colors">
+          &larr; Volver al inicio
+        </a>
+        <span class="text-xs text-slate-400 font-medium">Información Corporativa</span>
+      </div>
+    </nav>
+
+    <article class="mx-auto max-w-3xl px-4 sm:px-6 py-16 flex-grow prose prose-slate">
+      <h1 class="text-3xl font-extrabold text-[#091e3a] tracking-tight mb-8">Aviso Legal</h1>
+
+      <div class="space-y-8 text-sm text-slate-600 leading-relaxed">
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Identificación del titular</h2>
+          <p>Este sitio web es gestionado por su titular como plataforma de información y directorio de soluciones financieras y operativas para empresas. Para cualquier consulta: <a href="mailto:info@gastointeligente.es" class="text-[#0f9f90] hover:underline">info@gastointeligente.es</a></p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Objeto</h2>
+          <p>El presente aviso legal regula el acceso y uso del sitio web, que ofrece información general, diagnósticos orientativos y recomendaciones de productos o servicios de terceros bajo acuerdos de afiliación.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Propiedad intelectual</h2>
+          <p>Todos los contenidos de este sitio web (textos, imágenes, diseño, código) son propiedad del titular o han sido licenciados correctamente. Queda prohibida su reproducción sin autorización expresa.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Limitación de responsabilidad</h2>
+          <p>Las recomendaciones ofrecidas son orientativas y no constituyen asesoramiento financiero, legal o fiscal. El titular no se responsabiliza de las decisiones tomadas por el usuario en base a la información proporcionada.</p>
+        </section>
+
+        <section>
+          <h2 class="text-base font-bold text-[#091e3a] mb-2 uppercase tracking-wider text-xs">Legislación aplicable</h2>
+          <p>Este aviso legal se rige por la legislación española. Cualquier controversia se someterá a los juzgados y tribunales competentes según la normativa vigente.</p>
+        </section>
+      </div>
+    </article>
+
+    <Footer />
+  </div>
+</LandingLayout>

@@ -1,0 +1,217 @@
+---
+---
+<div id="quiz-wrapper" class="w-full bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden transition-all">
+  <!-- Cabecera de Progreso -->
+  <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider" id="step-indicator">Pregunta 1 de 7</span>
+    <div class="w-32 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+      <div id="progress-bar" class="bg-[#0f9f90] h-full w-[14%] transition-all duration-300"></div>
+    </div>
+  </div>
+
+  <!-- Contenedor del Cuestionario -->
+  <div class="p-6 sm:p-8">
+    <div id="quiz-steps">
+      <!-- Pregunta 1 -->
+      <div class="quiz-step block" data-step="1">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Cuál es la naturaleza jurídica o estructura de su actividad?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="agencia">Agencia consolidada (Gestión de múltiples clientes)</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="freelance">Consultor independiente / Profesional autónomo</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="interno">Departamento de marketing interno (In-house)</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 2 -->
+      <div class="quiz-step hidden" data-step="2">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Cuántos profesionales gestionan activamente las campañas de publicidad?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="small">Equipo reducido (1 - 2 personas)</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="medium">Equipo mediano (3 - 8 personas)</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="large">Estructura corporativa (Más de 8 gestores)</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 3 -->
+      <div class="quiz-step hidden" data-step="3">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Qué volumen de cuentas publicitarias administran de forma simultánea?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="few">Menos de 5 cuentas integradas</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="mid">Entre 5 y 20 cuentas operativas</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="many">Cartera alta (Más de 20 cuentas de anuncios)</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 4 -->
+      <div class="quiz-step hidden" data-step="4">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿A cuánto asciende la inversión mensual agregada en plataformas publicitarias?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="low">Inversión inicial (Menos de 10.000 € / mes)</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="mid">Inversión consolidada (10.000 € - 50.000 € / mes)</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="high">Gran volumen (Más de 50.000 € / mes)</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5 -->
+      <div class="quiz-step hidden" data-step="5">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Se comparten tarjetas bancarias entre diferentes profesionales del equipo?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="shared_cards" data-value="yes">Sí, empleamos los mismos métodos de pago para varios flujos o cuentas</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="shared_cards" data-value="no">No, cada cuenta o profesional dispone de un método de pago unívoco</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 6 -->
+      <div class="quiz-step hidden" data-step="6">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Requieren establecer topes o límites de gasto rígidos por cliente o campaña?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="limits" data-value="yes">Sí, resulta imprescindible para mitigar desviaciones presupuestarias accidentales</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="limits" data-value="no">No, la monitorización interna de cada plataforma es suficiente</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 7 -->
+      <div class="quiz-step hidden" data-step="7">
+        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Experimentan dificultades recurrentes en la recopilación y conciliación contable de facturas?</h3>
+        <div class="space-y-3">
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="reconciliation" data-value="yes">Sí, se dedican excesivas horas administrativas al cierre de mes recopilando justificantes</button>
+          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="reconciliation" data-value="no">No, el proceso contable se encuentra plenamente optimizado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles Inferiores -->
+    <div class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+      <button type="button" id="prev-btn" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-[#091e3a] disabled:opacity-30 disabled:pointer-events-none transition-colors">
+        &larr; Anterior
+      </button>
+      <span class="text-xs text-slate-400 font-light">Procesamiento local estrictamente confidencial</span>
+    </div>
+  </div>
+
+  <!-- Bloque de Resultados Dinámicos (Consultoría) -->
+  <div id="result-block" class="hidden p-6 sm:p-8 bg-[#f4faf9] border-t border-slate-200">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center rounded-md bg-[#091e3a] px-2.5 py-1 text-xs font-semibold text-white mb-4">Diagnóstico Consultivo Ejecutado</span>
+      <p class="text-base text-slate-800 font-medium leading-relaxed mb-6" id="result-intro"></p>
+      
+      <div class="mb-6">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Vulnerabilidades operativas identificadas:</h4>
+        <ul class="space-y-3 text-sm text-slate-700" id="result-painpoints"></ul>
+      </div>
+
+      <div class="p-5 bg-white border border-teal-100 rounded-xl mb-6 shadow-xs">
+        <h4 class="text-sm font-bold text-[#091e3a] mb-1.5 id="main-rec-title"">Estrategia Estructural Recomendada</h4>
+        <p class="text-xs text-slate-500 leading-relaxed" id="main-rec-desc"></p>
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-slate-200/60">
+        <p class="text-xs text-slate-400 italic mb-4">
+          Transparencia: Determinadas sugerencias disponen de acuerdos de afiliación independientes. Esto significa que podemos percibir una compensación económica si decide habilitar una cuenta corporativa, sin repercusión ni coste adicional alguno para su mercantil.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://www.qonto.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-[#0f9f90] px-5 py-3.5 text-sm font-semibold text-white shadow hover:bg-[#0d877a] transition-all text-center">
+            Acceder a la plataforma recomendada
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 7;
+  const answers: Record<string, string> = {};
+
+  const stepIndicator = document.getElementById('step-indicator');
+  const progressBar = document.getElementById('progress-bar');
+  const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+  const quizStepsContainer = document.getElementById('quiz-steps');
+  const resultBlock = document.getElementById('result-block');
+
+  function updateUI() {
+    if(stepIndicator) stepIndicator.textContent = `Pregunta ${currentStep} de ${totalSteps}`;
+    if(progressBar) progressBar.style.width = `${(currentStep / totalSteps) * 100}%`;
+    if(prevBtn) prevBtn.disabled = currentStep === 1;
+
+    document.querySelectorAll('.quiz-step').forEach(step => {
+      const stepNum = parseInt(step.getAttribute('data-step') || '0', 10);
+      if(stepNum === currentStep) {
+        step.classList.remove('hidden');
+        step.classList.add('block');
+      } else {
+        step.classList.remove('block');
+        step.classList.add('hidden');
+      }
+    });
+  }
+
+  function handleOptionSelection(key: string, value: string) {
+    answers[key] = value;
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateUI();
+    } else {
+      renderConsultativeResults();
+    }
+  }
+
+  function renderConsultativeResults() {
+    if(quizStepsContainer) quizStepsContainer.classList.add('hidden');
+    if(prevBtn) prevBtn.classList.add('hidden');
+    if(stepIndicator) stepIndicator.textContent = "Evaluación Finalizada";
+    if(progressBar) progressBar.style.width = "100%";
+
+    const introEl = document.getElementById('result-intro');
+    const painpointsEl = document.getElementById('result-painpoints');
+    const recTitleEl = document.getElementById('main-rec-title');
+    const recDescEl = document.getElementById('main-rec-desc');
+
+    let introText = "Atendiendo a la arquitectura de su equipo y los flujos de liquidación declarados, se concluye que su prioridad operativa trasciende la mera ejecución del pago de anuncios: requiere salvaguardar la trazabilidad y blindar las cuentas ante incidencias de volumen.";
+    let painPointsHTML = "";
+    let mainRecTitle = "Infraestructura Centralizada mediante Tarjetas Virtuales Corporativas";
+    let mainRecDesc = "Es altamente recomendable migrar hacia un ecosistema financiero que permita emitir tarjetas virtuales parametrizables vinculadas de forma unívoca a cada identificador de cliente. Esto anula por completo las suspensiones en cascada dentro de plataformas como Meta Business Manager o Google Ads.";
+
+    if (answers['shared_cards'] === 'yes') {
+      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Riesgo de Aislamiento de Fondos:</strong> Compartir una misma numeración entre cuentas expone la tesorería a bloqueos preventivos globales, paralizando campañas activas sin distinción de cliente.</li>`;
+    }
+    if (answers['reconciliation'] === 'yes') {
+      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Infección de Tiempos Administrativos:</strong> La dedicación de recursos cualificados a tareas manuales de extracción y cotejo de justificantes contables merma significativamente el margen neto de sus servicios.</li>`;
+      mainRecTitle = "Consolidación Financiera con Auto-conciliación de Justificantes";
+      mainRecDesc = "Su organización precisa un software bancario con reglas de bloqueo automático de tarjeta en caso de ausencia de factura adjunta tras 48 horas, forzando la digitalización contable de forma nativa.";
+    }
+    if (answers['spend'] === 'high' || answers['accounts'] === 'many') {
+      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Vulnerabilidad por Escala Operativa:</strong> Supervisar presupuestos variables en un porfolio amplio eleva exponencialmente la probabilidad de descuadres manuales críticos.</li>`;
+    }
+
+    if (!painPointsHTML) {
+      painPointsHTML = `<li class="flex items-start gap-2 text-slate-700">&bull; Riesgo latente por ausencia de topes financieros estrictos vinculados dinámicamente a la aprobación presupuestaria del cliente.</li>`;
+    }
+
+    if(introEl) introEl.innerHTML = introText;
+    if(painpointsEl) painpointsEl.innerHTML = painPointsHTML;
+    if(recTitleEl) recTitleEl.textContent = mainRecTitle;
+    if(recDescEl) recDescEl.textContent = mainRecDesc;
+
+    if(resultBlock) resultBlock.classList.remove('hidden');
+  }
+
+  document.querySelectorAll('.quiz-opt').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLButtonElement;
+      const key = target.getAttribute('data-key') || '';
+      const value = target.getAttribute('data-value') || '';
+      handleOptionSelection(key, value);
+    });
+  });
+
+  if(prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        updateUI();
+      }
+    });
+  }
+</script>
