@@ -1,8 +1,5 @@
-/* Hallmark · genre: modern-minimal · macrostructure: design-system (Bento Grid / Workbench / Long Document) · design-system: design.md · designed-as-app */
-@import "tailwindcss";
-
-@theme {
-  /* Colour — custom OKLCH palette anchored on the existing brand teal/navy (see design.md) */
+/* Control de Gastos — design tokens (portable export of design.md) */
+:root {
   --color-paper: oklch(100% 0 0);
   --color-paper-2: oklch(98% 0.006 185);
   --color-paper-3: oklch(96% 0.008 185);
@@ -22,10 +19,19 @@
   --color-dark-ink-2: oklch(72% 0.02 220);
   --color-dark-rule: oklch(34% 0.03 250);
 
-  /* Type — Space Grotesk display, Switzer body, JetBrains Mono outlier (numbers only) */
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -37,60 +43,15 @@
   --text-display-s: clamp(2.25rem, 4vw + 1rem, 3.25rem);
   --text-display: clamp(2.75rem, 5vw + 1rem, 4.75rem);
 
-  /* Spacing — 4pt scale, named */
-  --spacing-3xs: 0.25rem;
-  --spacing-2xs: 0.5rem;
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4.5rem;
-  --spacing-3xl: 7rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 160ms;
+  --dur-med: 240ms;
+  --dur-long: 400ms;
 
-  /* Radii */
   --radius-chip: 8px;
   --radius-input: 10px;
   --radius-card: 14px;
   --radius-pill: 999px;
-
-  /* Easing — the three named curves, never the browser default */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-:root {
-  --dur-short: 160ms;
-  --dur-med: 240ms;
-  --dur-long: 400ms;
-}
-
-html {
-  overflow-x: clip;
-}
-
-body {
-  overflow-x: clip;
-  font-variant-numeric: oldstyle-nums;
-}
-
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
-
-::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-ink);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }

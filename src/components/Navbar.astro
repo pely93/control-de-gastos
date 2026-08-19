@@ -1,40 +1,133 @@
 ---
 ---
-<!-- Navigation Header: Integrated Brand Palette Alignment -->
-<header class="bg-white border-b border-neutral-100 py-4 sticky top-0 z-50">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-    
-    <!-- Left Section: Logo & Links -->
-    <div class="flex items-center gap-8">
-      <a href="/" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-        <!-- Isotype [CG] - Pure Black Background for maximum contrast -->
-        <div class="h-7 w-7 rounded bg-black flex items-center justify-center text-white font-bold text-xs tracking-tight">
-          CG
-        </div>
-        <!-- Project Name -->
-        <span class="text-xl font-bold text-black tracking-tight">Control de Gastos</span>
-      </a>
+<!-- N5 Floating pill — detached, blur backdrop. Knobs: width=content-sized, backdrop=blur+saturate, anchor=top-centred -->
+<nav class="nav-pill" aria-label="Principal">
+  <a href="/" class="nav-pill__mark">
+    <span class="nav-pill__mark-icon">CG</span>
+    <span class="nav-pill__mark-text">Control de Gastos</span>
+  </a>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="/" class="text-sm font-medium text-neutral-600 hover:text-black transition-colors">
-          Inicio
-        </a>
-        <a href="/agencias" class="text-sm font-medium text-neutral-600 hover:text-black transition-colors">
-          Agencias y Media Buyers
-        </a>
-      </nav>
-    </div>
+  <ul class="nav-pill__links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/agencias">Agencias</a></li>
+  </ul>
 
-    <!-- Right Section: Aligned Teal Action Button -->
-    <div class="flex items-center">
-      <a 
-        href="#directorios" 
-        class="inline-flex items-center justify-center rounded-lg bg-[#0f9f90] px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-[#0d877a] transition-colors"
-      >
-        Realizar Diagnóstico
-      </a>
-    </div>
+  <a href="/agencias#quiz" class="nav-pill__cta">Diagnóstico</a>
+</nav>
 
-  </div>
-</header>
+<style>
+  .nav-pill {
+    position: sticky;
+    top: var(--spacing-sm);
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    margin: var(--spacing-sm) auto 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.875rem;
+    background: color-mix(in oklch, var(--color-paper) 80%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 8px 24px -12px oklch(23.6% 0.06 256.6 / 0.18);
+  }
+
+  .nav-pill__mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav-pill__mark-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-chip);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-outlier);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-pill__mark-text {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .nav-pill__links {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-pill__links a {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .nav-pill__links a:hover {
+    color: var(--color-ink);
+  }
+
+  .nav-pill__links a:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .nav-pill__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
+  }
+
+  .nav-pill__cta:hover {
+    background: var(--color-accent-strong);
+  }
+
+  .nav-pill__cta:active {
+    transform: translateY(1px);
+  }
+
+  .nav-pill__cta:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 60rem) {
+    .nav-pill__links {
+      display: flex;
+    }
+  }
+</style>

@@ -2,141 +2,331 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-  title="Directorios de Soluciones de Gasto e Infraestructura Financiera" 
-  description="Cada directorio está diseñado para un perfil específico. Elija el que mejor se adapta a su situación operativa actual."
+<Layout
+  title="Directorios de infraestructura de gasto y afiliación"
+  description="Directorios técnicos independientes para encontrar la plataforma de emisión de tarjetas y control de gasto adecuada a tu operación."
 >
- <!-- Hero Section with Brand Fixed -->
-<section class="py-12 bg-white text-center">
-  <div class="mx-auto max-w-4xl px-4">
-    <div class="inline-flex items-center rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 mb-6 border border-neutral-200">
-      Control de Gastos &middot; Soluciones para empresas
-    </div>
-      <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-[#091e3a] sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-[1.15]">
-        Soluciones de afiliación y control de gastos, <span class="text-[#0f9f90]">organizadas por necesidad.</span>
+  <!-- Bento Grid hero: fixed-height, centered display, outlined chip CTA -->
+  <section class="hero-fixed">
+    <div class="hero-fixed__inner">
+      <h1 class="hero-fixed__title">
+        El directorio de infraestructura de gasto <span class="hero-fixed__accent">para tu empresa</span>
       </h1>
-      <p class="mt-6 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-        Explore directorios técnicos y guías independientes concebidas para ayudarle a encontrar la plataforma de emisión de tarjetas y control operativo idónea en el menor tiempo posible.
+      <p class="hero-fixed__lede">
+        Directorios técnicos y guías independientes para encontrar la plataforma de emisión de tarjetas y control operativo adecuada — sin ruido de marketing.
       </p>
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#directorios" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-[#0f9f90] px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#0d877a] transition-all">
-          Explorar directorios
-        </a>
-      </div>
+      <a href="#directorios" class="chip-outline">Ver directorios</a>
     </div>
   </section>
 
-  <!-- Sección Directorios Disponibles -->
-  <section id="directorios" class="py-20 bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-14">
-        <h2 class="text-3xl font-extrabold tracking-tight text-[#091e3a] sm:text-4xl">Directorios disponibles</h2>
-        <p class="mt-3 text-base text-slate-500 max-w-3xl">
-          Cada directorio está estructurado para un perfil corporativo específico. Seleccione el ecosistema que mejor responda a sus necesidades actuales.
-        </p>
-      </div>
+  <!-- Body: asymmetric bento — one large available tile, two stacked upcoming tiles. Never 3 equal columns. -->
+  <section id="directorios" class="bento-section">
+    <div class="bento-section__inner">
+      <h2 class="bento-section__heading">Directorios disponibles</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Tarjeta 1: Agencias de publicidad (DISPONIBLE AHORA) -->
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs flex flex-col justify-between transition-all hover:border-[#0f9f90] hover:shadow-md">
+      <div class="bento">
+        <article class="bento-cell bento-cell--primary">
           <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="h-10 w-10 rounded-xl bg-[#f4faf9] flex items-center justify-center text-[#0f9f90] border border-teal-50">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-[#f4faf9] px-2.5 py-0.5 text-xs font-medium text-[#0f9f90] border border-teal-100">
-                Disponible ahora
+            <div class="bento-cell__head">
+              <span class="bento-cell__icon bento-cell__icon--active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
               </span>
+              <span class="status-chip status-chip--active">Disponible ahora</span>
             </div>
 
-            <h3 class="text-xl font-bold text-[#091e3a]">Agencias de paid media</h3>
-            <p class="mt-3 text-sm text-slate-500 leading-relaxed">
+            <h3 class="bento-cell__title bento-cell__title--primary">Agencias de paid media</h3>
+            <p class="bento-cell__desc">
               Control de gasto publicitario, tarjetas virtuales por cliente y campaña, límites automáticos y conciliación simplificada para agencias y compradores de medios.
             </p>
 
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="inline-flex items-center rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-100">Tarjetas virtuales</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-100">Límites por campaña</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-100">Control de gastos</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-100">Conciliación</span>
+            <div class="bento-cell__tags">
+              <span class="tag">Tarjetas virtuales</span>
+              <span class="tag">Límites por campaña</span>
+              <span class="tag">Control de gastos</span>
+              <span class="tag">Conciliación</span>
             </div>
           </div>
 
-          <div class="mt-8">
-            <a href="/agencias" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f9f90] px-4 py-3 text-sm font-semibold text-white shadow-xs hover:bg-[#0d877a] transition-all">
-              Ver directorio
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
+          <a href="/agencias" class="cta-fill cta-fill--wide">
+            Ver directorio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </article>
+
+        <article class="bento-cell bento-cell--secondary">
+          <div class="bento-cell__head">
+            <span class="bento-cell__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </span>
+            <span class="status-chip">Próximamente</span>
           </div>
-        </div>
+          <h3 class="bento-cell__title">Control de gasto interno</h3>
+          <p class="bento-cell__desc bento-cell__desc--muted">
+            Tarjetas corporativas, políticas de gasto y reporting automatizado para equipos internos.
+          </p>
+        </article>
 
-        <!-- Tarjeta 2: Control de gastos interno (PRÓXIMAMENTE) -->
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs flex flex-col justify-between opacity-85">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 border border-slate-100">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-400 border border-slate-200/60">
-                Próximamente
-              </span>
-            </div>
-
-            <h3 class="text-xl font-bold text-slate-400">Control de gasto interno</h3>
-            <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-              Soluciones para empresas que quieren controlar el gasto operativo de sus equipos con tarjetas corporativas, políticas de gasto y reporting automatizado.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Tarjetas corporativas</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Políticas de gasto</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Reporting</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Equipos</span>
-            </div>
+        <article class="bento-cell bento-cell--secondary">
+          <div class="bento-cell__head">
+            <span class="bento-cell__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </span>
+            <span class="status-chip">Próximamente</span>
           </div>
-
-          <div class="mt-8">
-            <div class="w-full inline-flex items-center justify-center rounded-xl border border-slate-100 bg-slate-50/50 px-4 py-3 text-sm font-medium text-slate-400 cursor-not-allowed">
-              Próximamente
-            </div>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3: Financiación empresarial (PRÓXIMAMENTE) -->
-        <div class="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs flex flex-col justify-between opacity-85">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 border border-slate-100">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-400 border border-slate-200/60">
-                Próximamente
-              </span>
-            </div>
-
-            <h3 class="text-xl font-bold text-slate-400">Financiación empresarial</h3>
-            <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-              Opciones de financiación y crédito para pymes, autónomos y empresas en crecimiento. Diagnóstico de necesidades y comparativa de productos disponibles.
-            </p>
-
-            <div class="mt-6 flex flex-wrap gap-2">
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Crédito pyme</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Financiación inmediata</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">ICO</span>
-              <span class="inline-flex items-center rounded-lg bg-slate-50/50 px-2.5 py-1 text-xs font-medium text-slate-400 border border-slate-100">Comparativa</span>
-            </div>
-          </div>
-
-          <div class="mt-8">
-            <div class="w-full inline-flex items-center justify-center rounded-xl border border-slate-100 bg-slate-50/50 px-4 py-3 text-sm font-medium text-slate-400 cursor-not-allowed">
-              Próximamente
-            </div>
-          </div>
-        </div>
-
+          <h3 class="bento-cell__title">Financiación empresarial</h3>
+          <p class="bento-cell__desc bento-cell__desc--muted">
+            Crédito para pymes y autónomos en crecimiento — diagnóstico de necesidades y comparativa de productos.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .hero-fixed {
+    padding-block: var(--spacing-3xl) var(--spacing-2xl);
+    background: var(--color-paper);
+    text-align: center;
+  }
+
+  .hero-fixed__inner {
+    max-width: 44rem;
+    margin-inline: auto;
+    padding-inline: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-fixed__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-display-s);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .hero-fixed__accent {
+    color: var(--color-accent-strong);
+  }
+
+  .hero-fixed__lede {
+    margin-top: var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    line-height: 1.55;
+    color: var(--color-ink-2);
+    max-width: 38rem;
+  }
+
+  .chip-outline {
+    margin-top: var(--spacing-lg);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border: 1.5px solid var(--color-ink);
+    border-radius: var(--radius-pill);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+  }
+
+  .chip-outline:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  .chip-outline:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+
+  .bento-section {
+    padding-block: var(--spacing-xl) var(--spacing-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .bento-section__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+
+  .bento-section__heading {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-2xl);
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .bento-cell {
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule-2);
+    border-radius: var(--radius-card);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  .bento-cell--primary {
+    grid-column: 1 / 8;
+    grid-row: 1 / 3;
+    gap: var(--spacing-xl);
+    transition: border-color var(--dur-short) var(--ease-out);
+  }
+
+  .bento-cell--primary:hover {
+    border-color: var(--color-accent);
+  }
+
+  .bento-cell--secondary {
+    grid-column: 8 / 13;
+    background: var(--color-paper-3);
+  }
+
+  .bento-cell__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .bento-cell__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-input);
+    background: var(--color-paper-3);
+    color: var(--color-ink-3);
+  }
+
+  .bento-cell__icon svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .bento-cell__icon--active {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-strong);
+  }
+
+  .status-chip {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-paper-3);
+    color: var(--color-ink-3);
+  }
+
+  .status-chip--active {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-strong);
+  }
+
+  .bento-cell__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--color-ink-2);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  .bento-cell__title--primary {
+    font-size: var(--text-xl);
+    color: var(--color-ink);
+  }
+
+  .bento-cell__desc {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.55;
+    color: var(--color-ink-2);
+  }
+
+  .bento-cell__desc--muted {
+    color: var(--color-ink-3);
+  }
+
+  .bento-cell__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--spacing-md);
+  }
+
+  .tag {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.625rem;
+    border-radius: var(--radius-chip);
+    background: var(--color-paper-3);
+    color: var(--color-ink-2);
+    border: 1px solid var(--color-rule-2);
+  }
+
+  .cta-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
+  }
+
+  .cta-fill--wide {
+    width: 100%;
+  }
+
+  .cta-fill:hover {
+    background: var(--color-accent-strong);
+  }
+
+  .cta-fill:active {
+    transform: translateY(1px);
+  }
+
+  .cta-fill:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 60rem) {
+    .bento-cell--primary,
+    .bento-cell--secondary {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+  }
+</style>
