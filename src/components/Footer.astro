@@ -24,6 +24,7 @@
     <div class="foot-mast__meta">
       <p>&copy; 2026 Control de Gastos. Todos los derechos reservados.</p>
       <p>Algunas soluciones pueden generarnos una comisión, sin coste adicional para ti. <a href="/legal/afiliacion">Más info</a></p>
+      <button type="button" id="footer-cookie-prefs" class="foot-mast__cookie-btn">Preferencias de cookies</button>
     </div>
   </div>
 </footer>
@@ -136,9 +137,37 @@
     text-underline-offset: 2px;
   }
 
+  .foot-mast__cookie-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-dark-ink-2);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .foot-mast__cookie-btn:hover {
+    color: var(--color-dark-ink);
+  }
+
+  .foot-mast__cookie-btn:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
   @media (max-width: 40rem) {
     .foot-mast__top {
       flex-direction: column;
     }
   }
 </style>
+
+<script>
+  document.getElementById('footer-cookie-prefs')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('cg:open-cookie-prefs'));
+  });
+</script>

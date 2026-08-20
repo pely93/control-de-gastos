@@ -1,0 +1,196 @@
+---
+---
+<!-- C4 Sticky bottom bar — RGPD consent gate. Google Analytics (G-D2HL4ZSN46) only loads after "Aceptar". -->
+<div id="cookie-consent" class="cookie-bar" role="dialog" aria-live="polite" aria-label="Preferencias de cookies" hidden>
+  <div class="cookie-bar__inner">
+    <p class="cookie-bar__text">
+      Usamos cookies técnicas (necesarias siempre) y, solo con tu consentimiento, cookies analíticas de Google Analytics para entender el uso del sitio. Puedes cambiar tu decisión cuando quieras. Más información en nuestra <a href="/legal/cookies">Política de Cookies</a>.
+    </p>
+    <div class="cookie-bar__actions">
+      <button type="button" id="cookie-reject" class="cookie-bar__btn cookie-bar__btn--outline">Rechazar</button>
+      <button type="button" id="cookie-accept" class="cookie-bar__btn cookie-bar__btn--fill">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-bar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 50;
+    background: var(--color-paper);
+    border-top: 1px solid var(--color-rule-2);
+    box-shadow: 0 -8px 24px -12px oklch(23.6% 0.06 256.6 / 0.18);
+  }
+
+  .cookie-bar[hidden] {
+    display: none;
+  }
+
+  .cookie-bar__inner {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding: var(--spacing-md) clamp(1rem, 4vw, 2rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .cookie-bar__text {
+    flex: 1 1 24rem;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    line-height: 1.55;
+    color: var(--color-ink-2);
+  }
+
+  .cookie-bar__text a {
+    color: var(--color-accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cookie-bar__actions {
+    display: flex;
+    gap: 0.625rem;
+    flex-shrink: 0;
+  }
+
+  .cookie-bar__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
+  }
+
+  .cookie-bar__btn--outline {
+    background: transparent;
+    border: 1.5px solid var(--color-ink);
+    color: var(--color-ink);
+  }
+
+  .cookie-bar__btn--outline:hover {
+    background: var(--color-paper-3);
+  }
+
+  .cookie-bar__btn--fill {
+    background: var(--color-accent);
+    border: 1.5px solid var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  .cookie-bar__btn--fill:hover {
+    background: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
+  }
+
+  .cookie-bar__btn:active {
+    transform: translateY(1px);
+  }
+
+  .cookie-bar__btn:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 40rem) {
+    .cookie-bar__inner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cookie-bar__actions {
+      justify-content: stretch;
+    }
+
+    .cookie-bar__btn {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  const CONSENT_KEY = 'cg-cookie-consent';
+  const MAX_AGE_DAYS = 365;
+  const GA_ID = 'G-D2HL4ZSN46';
+
+  type ConsentStatus = 'granted' | 'denied';
+
+  function readConsent(): ConsentStatus | null {
+    try {
+      const raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw) as { status: ConsentStatus; ts: number };
+      const ageDays = (Date.now() - data.ts) / (1000 * 60 * 60 * 24);
+      if (ageDays > MAX_AGE_DAYS) return null;
+      return data.status;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeConsent(status: ConsentStatus) {
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({ status, ts: Date.now() }));
+  }
+
+  function loadGoogleAnalytics() {
+    const w = window as typeof window & { __gaLoaded?: boolean; dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
+    if (w.__gaLoaded) return;
+    w.__gaLoaded = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    w.dataLayer = w.dataLayer || [];
+    function gtag(...args: unknown[]) {
+      w.dataLayer!.push(args);
+    }
+    w.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  const banner = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const rejectBtn = document.getElementById('cookie-reject');
+
+  function showBanner() {
+    banner?.removeAttribute('hidden');
+  }
+
+  function hideBanner() {
+    banner?.setAttribute('hidden', '');
+  }
+
+  const existing = readConsent();
+  if (existing === 'granted') {
+    loadGoogleAnalytics();
+  } else if (existing === null) {
+    showBanner();
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    writeConsent('granted');
+    loadGoogleAnalytics();
+    hideBanner();
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    writeConsent('denied');
+    hideBanner();
+  });
+
+  window.addEventListener('cg:open-cookie-prefs', showBanner);
+</script>
