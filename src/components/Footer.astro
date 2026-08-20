@@ -1,77 +1,144 @@
 ---
 ---
-<footer class="bg-[#091e3a] text-slate-300 pt-16 pb-12 border-t border-slate-800">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    
-    <!-- Main Column Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
-      
-      <!-- Column 1: Corporate Branding -->
-      <div class="md:col-span-5 flex flex-col items-start space-y-4">
-        <div class="flex items-center gap-2.5">
-          <!-- Updated Isotype to match the main project identity -->
-          <div class="h-7 w-7 rounded bg-white flex items-center justify-center text-black font-bold text-xs tracking-tight">
-            CG
-          </div>
-          <div class="flex flex-col">
-            <span class="text-lg font-bold text-white leading-none tracking-tight">Control de Gastos</span>
-            <span class="text-[11px] text-teal-400 font-medium mt-0.5">Soluciones para empresas</span>
-          </div>
+<!-- Ft1 Mast-headed — wordmark + tagline anchor a single band; compact link row beside; disclosure + copyright below. Knobs: wordmark size=xl, tagline=roman body, links row=inline -->
+<footer class="foot-mast">
+  <div class="foot-mast__inner">
+    <div class="foot-mast__top">
+      <div class="foot-mast__brand">
+        <span class="foot-mast__mark">CG</span>
+        <div>
+          <p class="foot-mast__wordmark">Control de Gastos</p>
+          <p class="foot-mast__tagline">Directorio independiente de infraestructura de gasto para empresas y agencias.</p>
         </div>
-        <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
-          Directorio de soluciones de afiliación y control de gasto para empresas, agencias y profesionales.
-        </p>
       </div>
 
-      <!-- Column 2: Directories -->
-      <div class="md:col-span-4 flex flex-col space-y-4">
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Directorios</h4>
-        <ul class="space-y-2.5 text-sm">
-          <li>
-            <a href="/agencias" class="hover:text-teal-400 transition-colors">Agencias de paid media</a>
-          </li>
-          <li>
-            <span class="text-slate-500 cursor-not-allowed flex items-center gap-1.5">
-              Control de gasto interno <span class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">Próximamente</span>
-            </span>
-          </li>
-          <li>
-            <span class="text-slate-500 cursor-not-allowed flex items-center gap-1.5">
-              Financiación empresarial <span class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">Próximamente</span>
-            </span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Legal Links -->
-      <div class="md:col-span-3 flex flex-col space-y-4">
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Legal</h4>
-        <ul class="space-y-2.5 text-sm">
-          <li>
-            <a href="/legal/privacidad" class="hover:text-teal-400 transition-colors">Privacidad</a>
-          </li>
-          <li>
-            <a href="/legal/cookies" class="hover:text-teal-400 transition-colors">Cookies</a>
-          </li>
-          <li>
-            <a href="/legal/aviso-legal" class="hover:text-teal-400 transition-colors">Aviso legal</a>
-          </li>
-          <li>
-            <a href="/legal/afiliacion" class="hover:text-teal-400 transition-colors">Política de afiliación</a>
-          </li>
-        </ul>
-      </div>
-
+      <ul class="foot-mast__links">
+        <li><a href="/agencias">Agencias</a></li>
+        <li><a href="/legal/privacidad">Privacidad</a></li>
+        <li><a href="/legal/cookies">Cookies</a></li>
+        <li><a href="/legal/aviso-legal">Aviso legal</a></li>
+        <li><a href="/legal/afiliacion">Afiliación</a></li>
+      </ul>
     </div>
 
-    <!-- Bottom Block: Copyright & Affiliate Disclaimer -->
-    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+    <div class="foot-mast__meta">
       <p>&copy; 2026 Control de Gastos. Todos los derechos reservados.</p>
-      <p class="flex items-center gap-1 flex-wrap justify-center md:justify-end">
-        Algunas soluciones pueden generarnos una comisión, sin coste adicional para ti.
-        <a href="/legal/afiliacion" class="text-teal-400 hover:underline font-medium">Más info</a>
-      </p>
+      <p>Algunas soluciones pueden generarnos una comisión, sin coste adicional para ti. <a href="/legal/afiliacion">Más info</a></p>
     </div>
-
   </div>
 </footer>
+
+<style>
+  .foot-mast {
+    background: var(--color-dark-surface);
+    color: var(--color-dark-ink-2);
+    padding-block: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .foot-mast__inner {
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+
+  .foot-mast__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-dark-rule);
+  }
+
+  .foot-mast__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    max-width: 26rem;
+  }
+
+  .foot-mast__mark {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-chip);
+    background: var(--color-dark-ink);
+    color: var(--color-dark-surface);
+    font-family: var(--font-outlier);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    margin-top: 0.125rem;
+  }
+
+  .foot-mast__wordmark {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--color-dark-ink);
+    letter-spacing: -0.01em;
+    margin: 0 0 0.25rem;
+  }
+
+  .foot-mast__tagline {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-dark-ink-2);
+    margin: 0;
+  }
+
+  .foot-mast__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem var(--spacing-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .foot-mast__links a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-dark-ink-2);
+    text-decoration: none;
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .foot-mast__links a:hover {
+    color: var(--color-dark-ink);
+  }
+
+  .foot-mast__links a:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .foot-mast__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-dark-ink-2);
+  }
+
+  .foot-mast__meta a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 40rem) {
+    .foot-mast__top {
+      flex-direction: column;
+    }
+  }
+</style>

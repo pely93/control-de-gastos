@@ -14,7 +14,7 @@ const { title, description } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-50/50 text-[#0f172a] font-sans selection:bg-teal-100">
+  <body class="min-h-screen flex flex-col bg-paper text-ink font-body">
     <Navbar />
     <main class="flex-grow">
       <slot />
@@ -24,12 +24,5 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
-  @import "tailwindcss";
-
-  :root {
-    --color-brand-dark: #091e3a;
-    --color-brand-accent: #0f9f90;
-    --color-brand-accent-hover: #0d877a;
-    --color-brand-bg-light: #f4faf9;
-  }
+  @import "../styles/global.css";
 </style>

@@ -1,123 +1,367 @@
 ---
 ---
-<div id="quiz-wrapper" class="w-full bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden transition-all">
-  <!-- Cabecera de Progreso -->
-  <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
-    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider" id="step-indicator">Pregunta 1 de 7</span>
-    <div class="w-32 bg-slate-200 h-1.5 rounded-full overflow-hidden">
-      <div id="progress-bar" class="bg-[#0f9f90] h-full w-[14%] transition-all duration-300"></div>
+<div id="quiz-wrapper" class="quiz">
+  <div class="quiz__head">
+    <span class="quiz__step" id="step-indicator">Pregunta 1 de 7</span>
+    <div class="quiz__progress-track">
+      <div id="progress-bar" class="quiz__progress-fill" style="width: 14%"></div>
     </div>
   </div>
 
-  <!-- Contenedor del Cuestionario -->
-  <div class="p-6 sm:p-8">
+  <div class="quiz__body">
     <div id="quiz-steps">
-      <!-- Pregunta 1 -->
-      <div class="quiz-step block" data-step="1">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Cuál es la naturaleza jurídica o estructura de su actividad?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="agencia">Agencia consolidada (Gestión de múltiples clientes)</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="freelance">Consultor independiente / Profesional autónomo</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="type" data-value="interno">Departamento de marketing interno (In-house)</button>
+      <div class="quiz-step" data-step="1">
+        <h3 class="quiz__question">¿Cuál es la naturaleza jurídica o estructura de su actividad?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="type" data-value="agencia">Agencia consolidada (gestión de múltiples clientes)</button>
+          <button type="button" class="quiz-opt" data-key="type" data-value="freelance">Consultor independiente / profesional autónomo</button>
+          <button type="button" class="quiz-opt" data-key="type" data-value="interno">Departamento de marketing interno (in-house)</button>
         </div>
       </div>
 
-      <!-- Pregunta 2 -->
-      <div class="quiz-step hidden" data-step="2">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Cuántos profesionales gestionan activamente las campañas de publicidad?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="small">Equipo reducido (1 - 2 personas)</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="medium">Equipo mediano (3 - 8 personas)</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="team" data-value="large">Estructura corporativa (Más de 8 gestores)</button>
+      <div class="quiz-step" data-step="2" hidden>
+        <h3 class="quiz__question">¿Cuántos profesionales gestionan activamente las campañas de publicidad?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="team" data-value="small">Equipo reducido (1–2 personas)</button>
+          <button type="button" class="quiz-opt" data-key="team" data-value="medium">Equipo mediano (3–8 personas)</button>
+          <button type="button" class="quiz-opt" data-key="team" data-value="large">Estructura corporativa (más de 8 gestores)</button>
         </div>
       </div>
 
-      <!-- Pregunta 3 -->
-      <div class="quiz-step hidden" data-step="3">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Qué volumen de cuentas publicitarias administran de forma simultánea?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="few">Menos de 5 cuentas integradas</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="mid">Entre 5 y 20 cuentas operativas</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="accounts" data-value="many">Cartera alta (Más de 20 cuentas de anuncios)</button>
+      <div class="quiz-step" data-step="3" hidden>
+        <h3 class="quiz__question">¿Qué volumen de cuentas publicitarias administran de forma simultánea?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="accounts" data-value="few">Menos de 5 cuentas integradas</button>
+          <button type="button" class="quiz-opt" data-key="accounts" data-value="mid">Entre 5 y 20 cuentas operativas</button>
+          <button type="button" class="quiz-opt" data-key="accounts" data-value="many">Cartera alta (más de 20 cuentas de anuncios)</button>
         </div>
       </div>
 
-      <!-- Pregunta 4 -->
-      <div class="quiz-step hidden" data-step="4">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿A cuánto asciende la inversión mensual agregada en plataformas publicitarias?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="low">Inversión inicial (Menos de 10.000 € / mes)</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="mid">Inversión consolidada (10.000 € - 50.000 € / mes)</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="spend" data-value="high">Gran volumen (Más de 50.000 € / mes)</button>
+      <div class="quiz-step" data-step="4" hidden>
+        <h3 class="quiz__question">¿A cuánto asciende la inversión mensual agregada en plataformas publicitarias?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="spend" data-value="low">Inversión inicial (menos de 10.000 € / mes)</button>
+          <button type="button" class="quiz-opt" data-key="spend" data-value="mid">Inversión consolidada (10.000 € – 50.000 € / mes)</button>
+          <button type="button" class="quiz-opt" data-key="spend" data-value="high">Gran volumen (más de 50.000 € / mes)</button>
         </div>
       </div>
 
-      <!-- Pregunta 5 -->
-      <div class="quiz-step hidden" data-step="5">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Se comparten tarjetas bancarias entre diferentes profesionales del equipo?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="shared_cards" data-value="yes">Sí, empleamos los mismos métodos de pago para varios flujos o cuentas</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="shared_cards" data-value="no">No, cada cuenta o profesional dispone de un método de pago unívoco</button>
+      <div class="quiz-step" data-step="5" hidden>
+        <h3 class="quiz__question">¿Se comparten tarjetas bancarias entre diferentes profesionales del equipo?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="shared_cards" data-value="yes">Sí, empleamos los mismos métodos de pago para varios flujos o cuentas</button>
+          <button type="button" class="quiz-opt" data-key="shared_cards" data-value="no">No, cada cuenta o profesional dispone de un método de pago unívoco</button>
         </div>
       </div>
 
-      <!-- Pregunta 6 -->
-      <div class="quiz-step hidden" data-step="6">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Requieren establecer topes o límites de gasto rígidos por cliente o campaña?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="limits" data-value="yes">Sí, resulta imprescindible para mitigar desviaciones presupuestarias accidentales</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="limits" data-value="no">No, la monitorización interna de cada plataforma es suficiente</button>
+      <div class="quiz-step" data-step="6" hidden>
+        <h3 class="quiz__question">¿Requieren establecer topes o límites de gasto rígidos por cliente o campaña?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="limits" data-value="yes">Sí, resulta imprescindible para mitigar desviaciones presupuestarias accidentales</button>
+          <button type="button" class="quiz-opt" data-key="limits" data-value="no">No, la monitorización interna de cada plataforma es suficiente</button>
         </div>
       </div>
 
-      <!-- Pregunta 7 -->
-      <div class="quiz-step hidden" data-step="7">
-        <h3 class="text-lg font-semibold text-[#091e3a] mb-4">¿Experimentan dificultades recurrentes en la recopilación y conciliación contable de facturas?</h3>
-        <div class="space-y-3">
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="reconciliation" data-value="yes">Sí, se dedican excesivas horas administrativas al cierre de mes recopilando justificantes</button>
-          <button type="button" class="quiz-opt w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-[#0f9f90] hover:bg-[#f4faf9] transition-all text-sm font-medium text-slate-700" data-key="reconciliation" data-value="no">No, el proceso contable se encuentra plenamente optimizado</button>
+      <div class="quiz-step" data-step="7" hidden>
+        <h3 class="quiz__question">¿Experimentan dificultades recurrentes en la recopilación y conciliación contable de facturas?</h3>
+        <div class="quiz__options">
+          <button type="button" class="quiz-opt" data-key="reconciliation" data-value="yes">Sí, se dedican excesivas horas administrativas al cierre de mes recopilando justificantes</button>
+          <button type="button" class="quiz-opt" data-key="reconciliation" data-value="no">No, el proceso contable se encuentra plenamente optimizado</button>
         </div>
       </div>
     </div>
 
-    <!-- Controles Inferiores -->
-    <div class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
-      <button type="button" id="prev-btn" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-[#091e3a] disabled:opacity-30 disabled:pointer-events-none transition-colors">
-        &larr; Anterior
-      </button>
-      <span class="text-xs text-slate-400 font-light">Procesamiento local estrictamente confidencial</span>
+    <div class="quiz__controls">
+      <button type="button" id="prev-btn" class="quiz__prev">&larr; Anterior</button>
+      <span class="quiz__privacy">Procesamiento local estrictamente confidencial</span>
     </div>
   </div>
 
-  <!-- Bloque de Resultados Dinámicos (Consultoría) -->
-  <div id="result-block" class="hidden p-6 sm:p-8 bg-[#f4faf9] border-t border-slate-200">
-    <div class="max-w-2xl">
-      <span class="inline-flex items-center rounded-md bg-[#091e3a] px-2.5 py-1 text-xs font-semibold text-white mb-4">Diagnóstico Consultivo Ejecutado</span>
-      <p class="text-base text-slate-800 font-medium leading-relaxed mb-6" id="result-intro"></p>
-      
-      <div class="mb-6">
-        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Vulnerabilidades operativas identificadas:</h4>
-        <ul class="space-y-3 text-sm text-slate-700" id="result-painpoints"></ul>
-      </div>
+  <div id="result-block" class="quiz-result" hidden>
+    <span class="quiz-result__badge">Diagnóstico consultivo ejecutado</span>
+    <p class="quiz-result__intro" id="result-intro"></p>
 
-      <div class="p-5 bg-white border border-teal-100 rounded-xl mb-6 shadow-xs">
-        <h4 class="text-sm font-bold text-[#091e3a] mb-1.5 id="main-rec-title"">Estrategia Estructural Recomendada</h4>
-        <p class="text-xs text-slate-500 leading-relaxed" id="main-rec-desc"></p>
-      </div>
-
-      <div class="mt-6 pt-5 border-t border-slate-200/60">
-        <p class="text-xs text-slate-400 italic mb-4">
-          Transparencia: Determinadas sugerencias disponen de acuerdos de afiliación independientes. Esto significa que podemos percibir una compensación económica si decide habilitar una cuenta corporativa, sin repercusión ni coste adicional alguno para su mercantil.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://www.qonto.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-[#0f9f90] px-5 py-3.5 text-sm font-semibold text-white shadow hover:bg-[#0d877a] transition-all text-center">
-            Acceder a la plataforma recomendada
-          </a>
-        </div>
-      </div>
+    <div class="quiz-result__section">
+      <h4 class="quiz-result__label">Vulnerabilidades operativas identificadas</h4>
+      <ul class="quiz-result__list" id="result-painpoints"></ul>
     </div>
+
+    <div class="quiz-result__rec">
+      <h4 class="quiz-result__rec-title" id="main-rec-title"></h4>
+      <p class="quiz-result__rec-desc" id="main-rec-desc"></p>
+    </div>
+
+    <p class="quiz-result__disclosure">
+      Transparencia: determinadas sugerencias disponen de acuerdos de afiliación independientes. Esto significa que podemos percibir una compensación económica si decide habilitar una cuenta corporativa, sin repercusión ni coste adicional alguno para su mercantil.
+    </p>
+    <a href="https://www.qonto.com" target="_blank" rel="noopener noreferrer" class="cta-fill cta-fill--wide">
+      Acceder a la plataforma recomendada
+    </a>
   </div>
 </div>
+
+<style>
+  .quiz {
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule-2);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  .quiz__head {
+    background: var(--color-paper-3);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--color-rule-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+
+  .quiz__step {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-ink-2);
+    white-space: nowrap;
+  }
+
+  .quiz__progress-track {
+    width: 8rem;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: var(--color-rule-2);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .quiz__progress-fill {
+    height: 100%;
+    background: var(--color-accent);
+    border-radius: var(--radius-pill);
+    transition: width var(--dur-med) var(--ease-out);
+  }
+
+  .quiz__body {
+    padding: var(--spacing-lg);
+  }
+
+  .quiz-step[hidden] {
+    display: none;
+  }
+
+  .quiz__question {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-lg);
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quiz__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .quiz-opt {
+    text-align: left;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--color-rule-2);
+    border-radius: var(--radius-input);
+    background: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-ink-2);
+    cursor: pointer;
+    transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+  }
+
+  .quiz-opt:hover {
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+  }
+
+  .quiz-opt:active {
+    transform: translateY(1px);
+  }
+
+  .quiz-opt:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .quiz__controls {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-rule-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+  }
+
+  .quiz__prev {
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-ink-3);
+    cursor: pointer;
+    transition: color var(--dur-short) var(--ease-out);
+  }
+
+  .quiz__prev:hover:not(:disabled) {
+    color: var(--color-ink);
+  }
+
+  .quiz__prev:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .quiz__prev:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .quiz__privacy {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-ink-3);
+  }
+
+  .quiz-result {
+    padding: var(--spacing-lg);
+    background: var(--color-paper-3);
+    border-top: 1px solid var(--color-rule-2);
+  }
+
+  .quiz-result[hidden] {
+    display: none;
+  }
+
+  .quiz-result__badge {
+    display: inline-flex;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-chip);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quiz-result__intro {
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--color-ink);
+    margin-bottom: var(--spacing-lg);
+    max-width: 42rem;
+  }
+
+  .quiz-result__section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .quiz-result__label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-2);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .quiz-result__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-ink-2);
+  }
+
+  .quiz-result__list :global(li) {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .quiz-result__rec {
+    padding: var(--spacing-md);
+    background: var(--color-paper);
+    border: 1px solid var(--color-rule-2);
+    border-radius: var(--radius-input);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .quiz-result__rec-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-ink);
+    margin-bottom: 0.375rem;
+  }
+
+  .quiz-result__rec-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    color: var(--color-ink-2);
+  }
+
+  .quiz-result__disclosure {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--color-ink-3);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.25rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: background-color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
+  }
+
+  .cta-fill--wide {
+    width: 100%;
+  }
+
+  .cta-fill:hover {
+    background: var(--color-accent-strong);
+  }
+
+  .cta-fill:active {
+    transform: translateY(1px);
+  }
+
+  .cta-fill:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+</style>
 
 <script>
   let currentStep = 1;
@@ -138,11 +382,9 @@
     document.querySelectorAll('.quiz-step').forEach(step => {
       const stepNum = parseInt(step.getAttribute('data-step') || '0', 10);
       if(stepNum === currentStep) {
-        step.classList.remove('hidden');
-        step.classList.add('block');
+        step.removeAttribute('hidden');
       } else {
-        step.classList.remove('block');
-        step.classList.add('hidden');
+        step.setAttribute('hidden', '');
       }
     });
   }
@@ -158,9 +400,9 @@
   }
 
   function renderConsultativeResults() {
-    if(quizStepsContainer) quizStepsContainer.classList.add('hidden');
-    if(prevBtn) prevBtn.classList.add('hidden');
-    if(stepIndicator) stepIndicator.textContent = "Evaluación Finalizada";
+    if(quizStepsContainer) quizStepsContainer.setAttribute('hidden', '');
+    if(prevBtn) prevBtn.style.display = 'none';
+    if(stepIndicator) stepIndicator.textContent = "Evaluación finalizada";
     if(progressBar) progressBar.style.width = "100%";
 
     const introEl = document.getElementById('result-intro');
@@ -170,23 +412,23 @@
 
     let introText = "Atendiendo a la arquitectura de su equipo y los flujos de liquidación declarados, se concluye que su prioridad operativa trasciende la mera ejecución del pago de anuncios: requiere salvaguardar la trazabilidad y blindar las cuentas ante incidencias de volumen.";
     let painPointsHTML = "";
-    let mainRecTitle = "Infraestructura Centralizada mediante Tarjetas Virtuales Corporativas";
+    let mainRecTitle = "Infraestructura centralizada mediante tarjetas virtuales corporativas";
     let mainRecDesc = "Es altamente recomendable migrar hacia un ecosistema financiero que permita emitir tarjetas virtuales parametrizables vinculadas de forma unívoca a cada identificador de cliente. Esto anula por completo las suspensiones en cascada dentro de plataformas como Meta Business Manager o Google Ads.";
 
     if (answers['shared_cards'] === 'yes') {
-      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Riesgo de Aislamiento de Fondos:</strong> Compartir una misma numeración entre cuentas expone la tesorería a bloqueos preventivos globales, paralizando campañas activas sin distinción de cliente.</li>`;
+      painPointsHTML += `<li>&bull; <strong>Riesgo de aislamiento de fondos:</strong> compartir una misma numeración entre cuentas expone la tesorería a bloqueos preventivos globales, paralizando campañas activas sin distinción de cliente.</li>`;
     }
     if (answers['reconciliation'] === 'yes') {
-      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Infección de Tiempos Administrativos:</strong> La dedicación de recursos cualificados a tareas manuales de extracción y cotejo de justificantes contables merma significativamente el margen neto de sus servicios.</li>`;
-      mainRecTitle = "Consolidación Financiera con Auto-conciliación de Justificantes";
+      painPointsHTML += `<li>&bull; <strong>Infección de tiempos administrativos:</strong> la dedicación de recursos cualificados a tareas manuales de extracción y cotejo de justificantes contables merma significativamente el margen neto de sus servicios.</li>`;
+      mainRecTitle = "Consolidación financiera con auto-conciliación de justificantes";
       mainRecDesc = "Su organización precisa un software bancario con reglas de bloqueo automático de tarjeta en caso de ausencia de factura adjunta tras 48 horas, forzando la digitalización contable de forma nativa.";
     }
     if (answers['spend'] === 'high' || answers['accounts'] === 'many') {
-      painPointsHTML += `<li class="flex items-start gap-2 text-slate-700">&bull; <strong>Vulnerabilidad por Escala Operativa:</strong> Supervisar presupuestos variables en un porfolio amplio eleva exponencialmente la probabilidad de descuadres manuales críticos.</li>`;
+      painPointsHTML += `<li>&bull; <strong>Vulnerabilidad por escala operativa:</strong> supervisar presupuestos variables en un porfolio amplio eleva exponencialmente la probabilidad de descuadres manuales críticos.</li>`;
     }
 
     if (!painPointsHTML) {
-      painPointsHTML = `<li class="flex items-start gap-2 text-slate-700">&bull; Riesgo latente por ausencia de topes financieros estrictos vinculados dinámicamente a la aprobación presupuestaria del cliente.</li>`;
+      painPointsHTML = `<li>&bull; Riesgo latente por ausencia de topes financieros estrictos vinculados dinámicamente a la aprobación presupuestaria del cliente.</li>`;
     }
 
     if(introEl) introEl.innerHTML = introText;
@@ -194,7 +436,7 @@
     if(recTitleEl) recTitleEl.textContent = mainRecTitle;
     if(recDescEl) recDescEl.textContent = mainRecDesc;
 
-    if(resultBlock) resultBlock.classList.remove('hidden');
+    if(resultBlock) resultBlock.removeAttribute('hidden');
   }
 
   document.querySelectorAll('.quiz-opt').forEach(btn => {

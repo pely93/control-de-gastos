@@ -1,130 +1,280 @@
 ---
-import LandingLayout from '../layouts/LandingLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import QuizEngine from '../components/QuizEngine.astro';
 ---
 
-<LandingLayout 
-  title="Tarjetas virtuales y control de gastos para agencias que compran anuncios" 
+<Layout
+  title="Tarjetas virtuales y control de gastos para agencias que compran anuncios"
   description="Separa pagos por cliente de forma segura, limita el gasto publicitario exacto por campaña y reduce la conciliación contable manual a final de mes."
 >
-  <header class="bg-[#f4faf9] border-b border-teal-100/40 py-5">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center gap-2">
-      <div class="h-8 w-8 rounded-lg bg-[#0f9f90] flex items-center justify-center text-white font-black text-sm shadow-xs">
-        GI
+  <!-- Workbench: functional label (not a badge pill), split diptych with the live spend-limits panel as product proof, then the quiz as the guided tool. -->
+  <section class="workbench-hero">
+    <div class="workbench-hero__grid">
+      <div class="workbench-hero__copy">
+        <p class="workbench-hero__label">Diagnóstico gratuito — 2 minutos</p>
+
+        <h1 class="workbench-hero__title">
+          Tarjetas virtuales y control de gastos <span class="workbench-hero__accent">para agencias de ads</span>
+        </h1>
+
+        <p class="workbench-hero__lede">
+          Descubre cómo mejorar el control de gastos de tu agencia y eliminar el caos de tarjetas compartidas, límites poco claros y conciliación manual.
+        </p>
+
+        <a href="#quiz" class="cta-fill">
+          Solicitar auditoría gratuita
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <ul class="workbench-hero__trust">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Solo 2 minutos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Sin compromiso</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Datos protegidos (RGPD)</li>
+        </ul>
       </div>
-      <div class="flex flex-col">
-        <span class="text-sm font-bold text-[#091e3a] leading-none">Control de Gastos</span>
-        <span class="text-[10px] text-[#0f9f90] font-medium tracking-wide mt-0.5">Soluciones para empresas</span>
-      </div>
-    </div>
-  </header>
 
-  <section class="relative overflow-hidden bg-gradient-to-b from-[#f4faf9] via-white to-transparent py-14 lg:py-20 border-b border-teal-100/30">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-8 flex flex-col items-start">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-[#e6f4f1] px-3 py-1 text-xs font-medium text-[#0f9f90] border border-[#ccede6]">
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            Diagnóstico gratuito &middot; Recomendaciones independientes
-          </span>
-          
-          <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-[#091e3a] sm:text-5xl lg:text-6xl leading-[1.15]">
-            Tarjetas virtuales y control de gastos <span class="text-[#0f9f90]">para agencias de ads</span>
-          </h1>
-          
-          <p class="mt-6 text-lg text-slate-500 max-w-2xl font-normal leading-relaxed">
-            Descubre en 2 minutos cómo mejorar el control de gastos de tu agencia y eliminar el caos de tarjetas compartidas, límites poco claros y conciliación manual.
-          </p>
-          
-          <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <a href="#quiz" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f9f90] px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#0d877a] transition-all transform hover:-translate-y-0.5">
-              Solicitar auditoría gratuita
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
+      <figure class="panel">
+        <figcaption class="panel__caption">Límites por cliente — vista en vivo</figcaption>
+        <div class="panel__rows">
+          <div class="panel__row">
+            <div class="panel__row-head">
+              <span>Cliente A — Meta Ads</span>
+              <span class="tabular panel__value">82%</span>
+            </div>
+            <div class="panel__track"><div class="panel__fill" style="width: 82%"></div></div>
           </div>
-
-          <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500">
-            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Solo 2 minutos</span>
-            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Sin compromiso</span>
-            <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#0f9f90]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Datos protegidos (RGPD)</span>
+          <div class="panel__row">
+            <div class="panel__row-head">
+              <span>Cliente B — Google Ads</span>
+              <span class="tabular panel__value">45%</span>
+            </div>
+            <div class="panel__track"><div class="panel__fill" style="width: 45%"></div></div>
           </div>
-        </div>
-
-        <div class="lg:col-span-4">
-          <div class="bg-white p-6 rounded-2xl border border-teal-100 shadow-xl shadow-teal-900/5 space-y-5">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-              <span class="text-xs font-bold text-[#091e3a] uppercase tracking-wider">Límites por Cliente</span>
-              <span class="text-[10px] bg-[#e6f4f1] text-[#0f9f90] font-semibold px-2 py-0.5 rounded">Activo</span>
+          <div class="panel__row">
+            <div class="panel__row-head">
+              <span>Cliente C — TikTok Ads</span>
+              <span class="tabular panel__value">91%</span>
             </div>
-            <div class="space-y-3">
-              <div>
-                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
-                  <span>Cliente A &mdash; Meta Ads</span>
-                  <span class="text-slate-900 font-semibold">82%</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-[#0f9f90] h-full w-[82%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
-                  <span>Cliente B &mdash; Google Ads</span>
-                  <span class="text-slate-900 font-semibold">45%</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-[#0f9f90] h-full w-[45%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-xs font-medium text-slate-600 mb-1">
-                  <span>Cliente C &mdash; TikTok Ads</span>
-                  <span class="text-slate-900 font-semibold">91%</span>
-                </div>
-                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                  <div class="bg-amber-500 h-full w-[91%] rounded-full"></div>
-                </div>
-              </div>
-            </div>
-            <div class="pt-2 text-center">
-              <span class="text-[11px] text-slate-400">Trazabilidad operativa total sin tarjetas compartidas</span>
-            </div>
+            <div class="panel__track"><div class="panel__fill panel__fill--warn" style="width: 91%"></div></div>
           </div>
         </div>
-
-      </div>
+        <p class="panel__footnote">Trazabilidad operativa total sin tarjetas compartidas</p>
+      </figure>
     </div>
   </section>
 
-  <section id="quiz" class="py-16 bg-slate-50">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold tracking-tight text-[#091e3a]">Evaluación de Medios de Pago</h2>
-        <p class="mt-2 text-sm text-slate-500">Configura tu estructura y descubre qué integraciones mitigan tus cuellos de botella.</p>
-      </div>
+  <section id="quiz" class="quiz-section">
+    <div class="quiz-section__inner">
+      <p class="quiz-section__label">Evaluación de medios de pago</p>
+      <h2 class="quiz-section__heading">Configura tu estructura y descubre qué integraciones mitigan tus cuellos de botella.</h2>
       <QuizEngine />
     </div>
   </section>
+</Layout>
 
-<!-- Pie de página -->
-  <footer class="bg-white border-t border-slate-200 py-10 text-center text-xs text-slate-400">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-3">
-      
-      <!-- Compliant Inline Legal Links -->
-      <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 font-medium text-slate-400/80">
-        <a href="/legal/privacidad" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Privacidad</a>
-        <span class="text-slate-300">&middot;</span>
-        <a href="/legal/cookies" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Cookies</a>
-        <span class="text-slate-300">&middot;</span>
-        <a href="/legal/aviso-legal" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Aviso legal</a>
-        <span class="text-slate-300">&middot;</span>
-        <a href="/legal/afiliacion" target="_blank" class="hover:text-black transition-colors underline decoration-slate-200 underline-offset-2">Política de afiliación</a>
-      </div>
-      
-      <!-- Copyright & System Context Description -->
-      <p class="text-[11px] text-slate-400/70">
-        &copy; 2026 Control de Gastos. Todos los derechos reservados. Análisis técnico independiente de infraestructura de pagos.
-      </p>
-    </div>
-  </footer>
-</LandingLayout>
+<style>
+  .workbench-hero {
+    padding-block: var(--spacing-2xl) var(--spacing-xl);
+    background: var(--color-paper);
+  }
+
+  .workbench-hero__grid {
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .workbench-hero__label {
+    font-family: var(--font-outlier);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .workbench-hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-display-s);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .workbench-hero__accent {
+    color: var(--color-accent-strong);
+  }
+
+  .workbench-hero__lede {
+    margin-top: var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    line-height: 1.55;
+    color: var(--color-ink-2);
+    max-width: 34rem;
+  }
+
+  .cta-fill {
+    margin-top: var(--spacing-lg);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color var(--dur-short) var(--ease-out), transform 100ms var(--ease-out);
+  }
+
+  .cta-fill:hover {
+    background: var(--color-accent-strong);
+  }
+
+  .cta-fill:active {
+    transform: translateY(1px);
+  }
+
+  .cta-fill:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  .workbench-hero__trust {
+    list-style: none;
+    margin: var(--spacing-lg) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-ink-2);
+  }
+
+  .workbench-hero__trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .workbench-hero__trust svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .panel {
+    background: var(--color-ink);
+    border-radius: var(--radius-card);
+    padding: var(--spacing-lg);
+    min-width: 0;
+  }
+
+  .panel__caption {
+    font-family: var(--font-outlier);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-dark-ink-2);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .panel__rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .panel__row-head {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-dark-ink-2);
+    margin-bottom: 0.375rem;
+  }
+
+  .panel__value {
+    color: var(--color-dark-ink);
+    font-weight: 600;
+  }
+
+  .panel__track {
+    width: 100%;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-dark-rule);
+    overflow: hidden;
+  }
+
+  .panel__fill {
+    height: 100%;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+  }
+
+  .panel__fill--warn {
+    background: var(--color-warn);
+  }
+
+  .panel__footnote {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-dark-rule);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    color: var(--color-dark-ink-2);
+    text-align: center;
+  }
+
+  .quiz-section {
+    padding-block: var(--spacing-2xl) var(--spacing-3xl);
+    background: var(--color-paper-2);
+  }
+
+  .quiz-section__inner {
+    max-width: 46rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+
+  .quiz-section__label {
+    font-family: var(--font-outlier);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-strong);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .quiz-section__heading {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-2xl);
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    text-align: center;
+    max-width: 34rem;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  @media (max-width: 60rem) {
+    .workbench-hero__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
