@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="quiz__body">
+  <div class="quiz__body" id="quiz-body">
     <div id="quiz-steps">
       <div class="quiz-step" data-step="1">
         <h3 class="quiz__question">¿Cuál es la naturaleza jurídica o estructura de su actividad?</h3>
@@ -371,7 +371,7 @@
   const stepIndicator = document.getElementById('step-indicator');
   const progressBar = document.getElementById('progress-bar');
   const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
-  const quizStepsContainer = document.getElementById('quiz-steps');
+  const quizBody = document.getElementById('quiz-body');
   const resultBlock = document.getElementById('result-block');
 
   function updateUI() {
@@ -400,8 +400,7 @@
   }
 
   function renderConsultativeResults() {
-    if(quizStepsContainer) quizStepsContainer.setAttribute('hidden', '');
-    if(prevBtn) prevBtn.style.display = 'none';
+    if(quizBody) quizBody.setAttribute('hidden', '');
     if(stepIndicator) stepIndicator.textContent = "Evaluación finalizada";
     if(progressBar) progressBar.style.width = "100%";
 
