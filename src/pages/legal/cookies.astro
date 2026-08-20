@@ -2,32 +2,75 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Política de Cookies" description="Detalles sobre el uso de cookies propias y de terceros en la plataforma.">
+<Layout title="Política de Cookies" description="Detalles sobre las cookies técnicas y analíticas utilizadas en la plataforma, y cómo gestionar tu consentimiento.">
   <article class="legal">
     <a href="/" class="legal__back">&larr; Volver al inicio</a>
 
     <h1 class="legal__title">Política de Cookies</h1>
     <p class="legal__intro">
-      Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación y analizar el uso del sitio.
+      Este sitio web utiliza cookies propias, estrictamente necesarias para su funcionamiento, y cookies analíticas de terceros (Google Analytics), que solo se instalan si prestas tu consentimiento expreso.
     </p>
 
     <div class="legal__body">
       <section>
         <h2>¿Qué son las cookies?</h2>
-        <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten recordar sus preferencias y mejorar la funcionalidad del sitio.</p>
+        <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten recordar sus preferencias, distinguir usuarios y, en el caso de las analíticas, medir el uso agregado del sitio.</p>
       </section>
 
       <section>
-        <h2>Tipos de cookies utilizadas</h2>
+        <h2>Cookies utilizadas</h2>
+        <div class="legal__table-wrap">
+          <table class="legal__table">
+            <thead>
+              <tr>
+                <th>Cookie</th>
+                <th>Proveedor</th>
+                <th>Finalidad</th>
+                <th>Duración</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>cg-cookie-consent</code></td>
+                <td>Control de Gastos (propia)</td>
+                <td>Recordar tu decisión sobre cookies</td>
+                <td>1 año</td>
+                <td>Técnica — necesaria</td>
+              </tr>
+              <tr>
+                <td><code>_ga</code></td>
+                <td>Google Analytics</td>
+                <td>Distinguir usuarios de forma anónima</td>
+                <td>2 años</td>
+                <td>Analítica — requiere consentimiento</td>
+              </tr>
+              <tr>
+                <td><code>_ga_&lt;container-id&gt;</code></td>
+                <td>Google Analytics</td>
+                <td>Mantener el estado de la sesión de análisis</td>
+                <td>2 años</td>
+                <td>Analítica — requiere consentimiento</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="legal__table-note">Las cookies técnicas no requieren consentimiento (art. 22.2 LSSI). Las cookies analíticas solo se instalan si aceptas el aviso de cookies; si lo rechazas, el script de Google Analytics no se carga en tu navegador.</p>
+      </section>
+
+      <section>
+        <h2>Base jurídica y transferencias internacionales</h2>
+        <p>La base jurídica de las cookies analíticas es tu consentimiento explícito. Google Analytics puede transferir datos a servidores de Google en Estados Unidos; Google LLC está adherida al <em>EU-U.S. Data Privacy Framework</em>, reconocido por la Comisión Europea como garantía adecuada para dicha transferencia. Puedes ampliar esta información en nuestra <a href="/legal/privacidad">Política de Privacidad</a>.</p>
+      </section>
+
+      <section>
+        <h2>Cómo gestionar tus preferencias</h2>
+        <p>Puedes cambiar tu decisión sobre las cookies analíticas en cualquier momento:</p>
         <ul>
-          <li><strong>Cookies técnicas:</strong> necesarias para el funcionamiento del sitio. No requieren consentimiento.</li>
-          <li><strong>Cookies analíticas:</strong> permiten medir el tráfico y el comportamiento de los usuarios. Requieren consentimiento.</li>
+          <li><button type="button" id="cookies-page-open-prefs" class="legal__inline-btn">Abrir el panel de preferencias de cookies</button></li>
+          <li>Configurando tu navegador para bloquear o eliminar cookies (ten en cuenta que esto puede afectar a la funcionalidad del sitio).</li>
+          <li>Instalando el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de inhabilitación de Google Analytics</a> para navegadores.</li>
         </ul>
-      </section>
-
-      <section>
-        <h2>Cómo gestionar las cookies</h2>
-        <p>Puede configurar su navegador para rechazar o eliminar las cookies. Tenga en cuenta que deshabilitar ciertas cookies puede afectar a la funcionalidad del sitio.</p>
       </section>
 
       <section>
@@ -117,4 +160,77 @@ import Layout from '../../layouts/Layout.astro';
     text-decoration: underline;
     text-underline-offset: 2px;
   }
+
+  .legal__table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-rule-2);
+    border-radius: var(--radius-input);
+    margin-top: 0.5rem;
+  }
+
+  .legal__table {
+    width: 100%;
+    min-width: 36rem;
+    border-collapse: collapse;
+    font-size: var(--text-xs);
+  }
+
+  .legal__table th,
+  .legal__table td {
+    text-align: left;
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid var(--color-rule-2);
+    vertical-align: top;
+  }
+
+  .legal__table thead th {
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.6875rem;
+    color: var(--color-ink-3);
+    background: var(--color-paper-3);
+  }
+
+  .legal__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .legal__table code {
+    font-family: var(--font-outlier);
+    font-size: 0.75rem;
+    background: var(--color-paper-3);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+  }
+
+  .legal__table-note {
+    margin-top: 0.5rem;
+    font-size: var(--text-xs);
+    color: var(--color-ink-3);
+  }
+
+  .legal__inline-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+
+  .legal__inline-btn:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
 </style>
+
+<script>
+  document.getElementById('cookies-page-open-prefs')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('cg:open-cookie-prefs'));
+  });
+</script>
